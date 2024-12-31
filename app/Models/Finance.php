@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Finance extends Model
 {
-    protected $table = 'finance'; 
-    protected $primaryKey = 'id_data'; 
+    protected $table = 'finance_reports'; 
+    protected $primaryKey = 'id'; 
     protected $fillable = [
-        'id_data',
+        'id',
         'tanggal',
         'jumlah_pengeluaran',
         'keterangan',
