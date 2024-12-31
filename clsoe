@@ -1,0 +1,83 @@
+[33mcommit 14c167ab1053200290c7af6b73feda42024809f1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: daryrf <mdary621@gmail.com>
+Date:   Tue Dec 31 13:21:04 2024 +0700
+
+    Add new migration for finance table
+
+[33mcommit d7da9af0e9a3875f5d7d702683b07cfdfff705ff[m
+Author: daryrf <mdary621@gmail.com>
+Date:   Tue Dec 31 13:20:09 2024 +0700
+
+    Update FinanceController.php to include necessary logic
+
+[33mcommit 6dd8c4d80daea7a207fc0da9c629e50248414f43[m
+Author: daryrf <mdary621@gmail.com>
+Date:   Tue Dec 31 13:18:37 2024 +0700
+
+    Update dashboard blade view
+
+[33mcommit d3cb7da29cfe0f4532e9d9572752fba794cefdf4[m
+Author: daryrf <mdary621@gmail.com>
+Date:   Tue Dec 31 13:17:45 2024 +0700
+
+    Update Finance model for finance reports
+
+[33mcommit 9e3e4ad57ecbbfa809420d01c6a291a3d9de86f7[m
+Author: daryrf <mdary621@gmail.com>
+Date:   Tue Dec 31 13:16:31 2024 +0700
+
+    Update routes in web.php for finance
+
+[33mcommit f71fb4f0244979194e990811527d3ad16046ff56[m
+Author: daryrf <mdary621@gmail.com>
+Date:   Tue Dec 31 13:15:37 2024 +0700
+
+    Create finance folder and add views files
+
+[33mcommit 6cdeb016d2d487443818f72b8f54d1eb532560c7[m
+Author: FauzanM-ram <fauzanmuhammadramadhan@gmail.com>
+Date:   Mon Dec 30 20:31:22 2024 +0700
+
+    add view link to database
+
+[33mcommit 3514713c0f1056b2972d4e583c2179c7e978c15b[m
+Author: FauzanM-ram <fauzanmuhammadramadhan@gmail.com>
+Date:   Mon Dec 30 14:29:45 2024 +0700
+
+    add table
+
+[33mcommit cfb5a574d2da59947deec1885ebffcee28c63536[m
+Author: FauzanM-ram <fauzanmuhammadramadhan@gmail.com>
+Date:   Mon Dec 30 13:05:11 2024 +0700
+
+    add login register with breeze
+
+[33mcommit 52e553e198e67105065a7bc6af4b650aa5a00899[m
+Author: FauzanM-ram <fauzanmuhammadramadhan@gmail.com>
+Date:   Mon Dec 30 12:46:21 2024 +0700
+
+    change database
+
+[33mcommit a1e8988c4ce05a8fb67b94d7ba00b95e6d0e4a6f[m
+Author: FauzanM-ram <fauzanmuhammadramadhan@gmail.com>
+Date:   Mon Dec 30 12:37:39 2024 +0700
+
+    add breeze
+
+[33mcommit 90c39ea62f03158410abac091e59ec0d4a93dfed[m
+Author: FauzanM-ram <fauzanmuhammadramadhan@gmail.com>
+Date:   Mon Dec 30 11:10:44 2024 +0700
+
+    add controller auth and update models and database migration
+
+[33mcommit 2931e28f4c4c020b12ddc7b2d5c28b2b4ad37ce9[m
+Author: FauzanM-ram <fauzanmuhammadramadhan@gmail.com>
+Date:   Mon Dec 30 09:52:47 2024 +0700
+
+    Update .env.example with new environment configurations
+
+[33mcommit 8bb91197238f882bfad336a8274b23a79c92b71b[m
+Author: FauzanM-ram <fauzanmuhammadramadhan@gmail.com>
+Date:   Mon Dec 30 09:14:44 2024 +0700
+
+    initialization commit

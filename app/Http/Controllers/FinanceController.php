@@ -10,7 +10,7 @@ class FinanceController extends Controller
     public function index()
     {
         $finances = Finance::orderBy('tanggal', 'desc')->paginate(10);
-        return view('finance.index', compact('finances'));
+        return view('dashboard', compact('finances'));
     }
 
     public function create()
@@ -27,7 +27,7 @@ class FinanceController extends Controller
         ]);
 
         Finance::create($request->all());
-        return redirect()->route('finance.index')
+        return redirect()->route('dashboard')
             ->with('success', 'Data keuangan berhasil ditambahkan.');
     }
 
@@ -48,7 +48,7 @@ class FinanceController extends Controller
         $finance = Finance::findOrFail($id);
         $finance->update($request->all());
 
-        return redirect()->route('finance.index')
+        return redirect()->route('dashboard')
             ->with('success', 'Data keuangan berhasil diperbarui.');
     }
 
@@ -57,7 +57,7 @@ class FinanceController extends Controller
         $finance = Finance::findOrFail($id);
         $finance->delete();
 
-        return redirect()->route('finance.index')
+        return redirect()->route('dashboard')
             ->with('success', 'Data keuangan berhasil dihapus.');
     }
 }
