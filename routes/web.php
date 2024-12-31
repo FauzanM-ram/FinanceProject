@@ -19,10 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/dashboard', [FinanceController::class, 'ViewData'])->name('dashboard');
+Route::get('/dashboard', [FinanceController::class, 'index'])->name('dashboard');
+Route::resource('finance', FinanceController::class);
+Route::get('/finance/{finance}/edit', [FinanceController::class, 'edit'])->name('finance.edit');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
