@@ -1,4 +1,17 @@
 <x-app-layout>
+        <div class="max-w-xl mt-6 ml-7 sm:px-6 w-1/3">
+            <div class="ml-5 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    <div class="flex justify-between items-center ">
+                        <h2 class="text-white text-xl font-semibold">Total Pengeluaran</h2>
+                        <h2 class="text-white text-xl font-bold py-2 px-4 mr-5 rounded "">
+                        Rp {{ number_format($totalPengeluaran, 0, ',', '.') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">

@@ -10,7 +10,9 @@ class FinanceController extends Controller
     public function index()
     {
         $finances = Finance::orderBy('tanggal', 'desc')->paginate(10);
-        return view('dashboard', compact('finances'));
+        $totalPengeluaran = Finance::sum('jumlah_pengeluaran');
+        
+        return view('dashboard', compact('finances','totalPengeluaran'));
     }
 
     public function create()
