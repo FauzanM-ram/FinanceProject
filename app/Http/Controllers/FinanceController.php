@@ -7,9 +7,57 @@ use Illuminate\Http\Request;
 
 class FinanceController extends Controller
 {
-    public function ViewData()
+    public function index()
     {
-        $finances = Finance::all();
-        return view('dashboard', compact('finances'));
+        $finances = Finance::orderBy('tanggal', 'desc')->paginate(10);
+        return view('finance.index', compact('finances'));
+    }
+
+    public function create()
+    {
+        return view('finance.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'tanggal' => 'required|date',
+            'jumlah_pengeluaran' => 'required|numeric',
+            'keterangan' => 'required|string|max:255',
+        ]);
+
+        Finance::create($request->all());
+        return redirect()->route('finance.index')
+            ->with('success', 'Data keuangan berhasil ditambahkan.');
+    }
+
+    public function edit($id)
+    {
+        $finance = Finance::findOrFail($id);
+        return view('finance.edit', compact('finance'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'tanggal' => 'required|date',
+            'jumlah_pengeluaran' => 'required|numeric',
+            'keterangan' => 'required|string|max:255',
+        ]);
+
+        $finance = Finance::findOrFail($id);
+        $finance->update($request->all());
+
+        return redirect()->route('finance.index')
+            ->with('success', 'Data keuangan berhasil diperbarui.');
+    }
+
+    public function destroy($id)
+    {
+        $finance = Finance::findOrFail($id);
+        $finance->delete();
+
+        return redirect()->route('finance.index')
+            ->with('success', 'Data keuangan berhasil dihapus.');
     }
 }
