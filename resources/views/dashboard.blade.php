@@ -51,13 +51,21 @@
                                         <a href="{{ route('finance.edit', $finance->id) }}" class="text-indigo-600 hover:text-indigo-900 py-2 px-4 border border-indigo-500 rounded-lg text-sm font-semibold hover:bg-indigo-500 hover:text-white transition ease-in-out duration-150">
                                             Edit
                                         </a>
-                                        <form action="{{ route('finance.destroy', $finance->id) }}" method="POST" class="inline">
+                                        <!-- <form action="{{ route('finance.destroy', $finance->id) }}" method="POST" class="inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="text-red-600 hover:text-red-900 py-2 px-4 border border-red-500 rounded-lg text-sm font-semibold hover:bg-red-500 hover:text-white transition ease-in-out duration-150" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                                                 Hapus
                                             </button>
+                                        </form> -->
+                                        <form action="{{ route('finance.destroy', $finance->id) }}" method="POST" class="inline" id="delete-form-{{ $finance->id }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="text-red-600 hover:text-red-900 py-2 px-4 border border-red-500 rounded-lg text-sm font-semibold hover:bg-red-500 hover:text-white transition ease-in-out duration-150" onclick="confirmDelete({{ $finance->id }})">
+                                                Hapus
+                                            </button>
                                         </form>
+
                                     </td>
                                 </tr>
                                 @endforeach
@@ -71,4 +79,24 @@
             </div>
         </div>
     </div>
+    <script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Data ini akan dihapus secara permanen!",
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Batal',
+            confirmButtonText: 'Hapus',
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('delete-form-' + id).submit();
+            }
+        });
+    }
+</script>
+
 </x-app-layout>
