@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Finance;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\DB;
 
 class FinanceController extends Controller
 {
@@ -24,7 +25,7 @@ class FinanceController extends Controller
     {
         $request->validate([
             'tanggal' => 'required|date',
-            'jumlah_pengeluaran' => 'required|numeric',
+            'jumlah_pengeluaran' => 'required|numeric|min:0',
             'keterangan' => 'required|string|max:255',
         ]);
 
@@ -43,7 +44,7 @@ class FinanceController extends Controller
     {
         $request->validate([
             'tanggal' => 'required|date',
-            'jumlah_pengeluaran' => 'required|numeric',
+            'jumlah_pengeluaran' => 'required|numeric|min:0',
             'keterangan' => 'required|string|max:255',
         ]);
 
